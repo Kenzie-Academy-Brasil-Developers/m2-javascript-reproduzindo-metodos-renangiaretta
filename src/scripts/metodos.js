@@ -20,8 +20,6 @@ function recreateFilter(array, callback){
 }
 
 
-const testeFilter = arrTeste.filter((arrTeste) => arrTeste[i] === 2)
-
 function recreateReduce(array){
     let result = 0;
     for(let i = 0; i < array.length; i++){
