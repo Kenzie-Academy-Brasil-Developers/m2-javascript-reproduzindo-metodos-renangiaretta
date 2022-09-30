@@ -1,22 +1,22 @@
 // const arrTeste = [1,2,3]
 
-function recreateMap(array, callback){
+function recreateMap(array, callbackFunc){
     let arrResult = [];
     for(let i = 0; i < array.length; i++){
-        showResult.push(callback(array[i]))
+        showResult.push(callbackFunc(array[i]))
     }
     return arrResult;
 }
 
 
-function recreateFilter(array, callback){
+function recreateFilter(array, callbackFunc){
     let arrResult = [];
     for(let i = 0; i < array.length; i++){
-        if(callback(array[i])){
+        if(callbackFunc(array[i])){
             arrResult.push(array[i], i)
         }
-        return arrResult
     }
+    return arrResult;
 }
 
 
@@ -30,27 +30,30 @@ function recreateReduce(array){
 
 
 
-function recreateFind (array, callback){
+function recreateFind (array, callbackFunc){
     let result = 0;
     for(let i = 0; i < array.length; i++){
-        if(callback(array[i]) == true){
-            return i;
+        if(callbackFunc(array[i])){
+            result = array[i];
+            break;
         }
     }
+    return result;
 }
 
 
-function recreateIncludes(array, callback){
+function recreateIncludes(array, callbackFunc){
     for(let i = 0; i<array.length; i++){
-        if((array[i]) == callback){
+        if((array[i]) == callbackFunc){
             return true;
         }
     }
 }
 
-function recreateIndexOf(array, callback) {
+
+function recreateIndexOf(array, callbackFunc) {
     for(let i = 0; i < array.length; i++){
-        if((array[i]) == callback){
+        if((array[i]) == callbackFunc){
             return i;
         }
     }
